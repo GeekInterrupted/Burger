@@ -1,0 +1,83 @@
+
+  <nav class="light-red lighten-1" role="navigation">  
+    <div class="nav-wrapper container center"><a href= "#"><img class="responsive-img" src="assets/img/burger.png" alt="Eat Da Burger Icon"></a> 
+    </div>
+  </nav>
+  <div class="section no-pad-bot" id="index-banner">
+    <div class="container">
+      
+      <h1 class="header center red-text">Das Burger Haus!</h1>
+      <div class="row center">
+        <h5 class="header col s12 light">All Burgers are 5,000 Calories</h5>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="section">
+       <div class="row">
+        <div class="col s12 m4">
+          <h5 class="center">MY BURGERS</h5>
+            <p class="light">
+              <ul>
+                {{#each burgers}}
+                  {{#unless this.devoured}}
+                    <li>
+                    {{this.id}}. {{this.burger_name}}
+
+                      <form action="/{{this.id}}?_method=PUT" method="POST">
+                        <input type="hidden" name="devoured" value="true">
+                        <button class="btn waves-effect waves-light red" type="submit">Eat Me!</button>
+                      </form>
+
+                    </li>
+                  {{/unless}}
+                {{/each}}
+              </ul>
+            </p>
+        </div>
+
+        <div class="col s12 m4">
+          <div class="row">
+            <h5 class="center">ADD A BURGER</h5>
+                  <form class="create-update-form" action="/" method="POST">
+
+                    <div class="form-group">
+                      <label for="newBurger">Burger Name:</label>
+                      <input placeholder="Example: Baconator" type="text" id="newBurger" name="burger_name">
+                    </div>
+
+                    <button type="submit" class="btn-large waves-effect waves-light red">Add my burger</button>
+                  </form>
+          </div>
+        </div>
+        <div class="col s12 m4">
+            <h5 class="center">DEVOURED BURGERS</h5>
+              <p class="light">
+                  <ul>
+                    {{#each burgers}}
+                      {{#if this.devoured}}
+                        <li>
+                        {{this.id}}. {{this.burger_name}}      
+                        </li>
+                      {{/if}}
+                    {{/each}}
+                  </ul>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>  {{!--end container--}}
+ 
+
+  <footer class="page-footer red">
+  
+    <div class="footer-copyright">
+      <div class="container">
+      Made by <a class="white-text text-lighten-3" href="https://github.com/GeekInterrupted/Burger">Olga O'Neal</a>
+      </div>
+    </div>
+  </footer>
+
+
+  
