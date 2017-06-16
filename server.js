@@ -3,7 +3,7 @@ var bodyParser = require("body-parser");
 var methodOverride = require("method-override");
 var mysql = require("mysql");
 
-var port = 3000 || env.process.PORT;
+var port = process.env.PORT || 3000;
 
 var app = express();
 
