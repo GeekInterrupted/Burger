@@ -10,5 +10,5 @@ Whenever a user submits a burger's name, the app will display the burger on the 
 
 Each burger in the waiting area also has an Eat Me! button. When the user clicks it, the burger will move to the right side of the page.
 
-Your app will store every burger in a database, whether devoured or not.
+The app will store every burger in a database, whether devoured or not.
 
